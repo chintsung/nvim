@@ -36,11 +36,12 @@ call vundle#rc()
 
 " My bundles
 Bundle 'gmarik/vundle'
-Bundle 'pyflakes.vim'
+Bundle 'vim-flake8'
 Bundle 'rkulla/pydiction'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Shougo/neocomplcache'
 Bundle 'majutsushi/tagbar'
+Bundle 'DoxygenToolkit.vim'
 " end of Vundle
 
 function! Notice()
@@ -88,6 +89,9 @@ nnoremap <C-H> :tabprevious<CR>
 nnoremap <C-L> :tabnext<CR>
 nmap <F8> :TagbarToggle<CR>
 
+" To have the usual behavior of <ESC> even in :term windows.
+tnoremap <ESC> <C-\><C-n>
+
 " pressing < or > will let you indent/unindent selected lines
 vnoremap < <gv
 vnoremap > >gv
@@ -95,4 +99,11 @@ vnoremap > >gv
 let g:neocomplcache_enable_at_startup = 1
 
 " highlight PyFlakes term=underline cterm= underline
+
+" Configure doxygen
+let g:DoxygenToolkit_briefTag_funcName = "yes"
+let g:DoxygenToolkit_briefTag_pre = "\\brief "
+let g:DoxygenToolkit_paramTag_pre = "\\param "
+let g:DoxygenToolkit_fileTag = "\\file "
+let g:doxygen_enhanced_color = 1
 
