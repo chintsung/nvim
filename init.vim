@@ -42,6 +42,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Shougo/neocomplcache'
 Bundle 'majutsushi/tagbar'
 Bundle 'DoxygenToolkit.vim'
+Bundle 'iamcco/markdown-preview.nvim'
 " end of Vundle
 
 function! Notice()
