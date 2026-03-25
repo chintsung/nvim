@@ -28,22 +28,29 @@ set background=dark
 set t_Co=256
 
 "自動檢測文件類型並縮排
-filetype plugin indent on
+"filetype plugin indent on
+filetype off	" required
 
 " Vundle
 set rtp+=~/.config/nvim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " My bundles
-Bundle 'gmarik/vundle'
-Bundle 'vim-flake8'
-Bundle 'rkulla/pydiction'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Shougo/neocomplcache'
-Bundle 'majutsushi/tagbar'
-Bundle 'DoxygenToolkit.vim'
-Bundle 'iamcco/markdown-preview.nvim'
+Plugin 'vim-flake8'
+Plugin 'rkulla/pydiction'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Shougo/neocomplcache'
+Plugin 'majutsushi/tagbar'
+Plugin 'DoxygenToolkit.vim'
+Plugin 'iamcco/markdown-preview.nvim'
 " end of Vundle
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 function! Notice()
  if !exists("g:record_now")
